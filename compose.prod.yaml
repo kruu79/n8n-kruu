@@ -5,6 +5,8 @@ services:
     restart: unless-stopped
     ports:
       - "5678:5678"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     environment:
       - WEBHOOK_URL=${WEBHOOK_URL}
       - N8N_HOST=0.0.0.0
