@@ -1,0 +1,8 @@
+{
+  "scss.lint.unknownAtRules": "ignore",
+  "css.lint.unknownAtRules": "ignore",
+
+  "explorer.compactFolders": false,
+  "workbench.tree.renderIndentGuides": "always",
+  "window.zoomLevel": 1
+}

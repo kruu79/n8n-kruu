@@ -1,0 +1,4 @@
+/n8n-data/*
+/n8n-files/*
+/node_modules/*
+.env
