@@ -1,5 +1,4 @@
 /n8n-data/*
 !/n8n-data/.gitkeep
-!/n8n-files/.gitkeep
 /node_modules/*
 .env
