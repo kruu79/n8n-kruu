@@ -5,8 +5,6 @@ services:
     restart: unless-stopped
     ports:
       - "5678:5678"
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
     environment:
       - WEBHOOK_URL=${WEBHOOK_URL}
       - N8N_HOST=0.0.0.0
@@ -19,9 +17,9 @@ services:
       - N8N_RUNNERS_ENABLED=${N8N_RUNNERS_ENABLED}
       - N8N_BLOCK_ENV_ACCESS_IN_NODE=${N8N_BLOCK_ENV_ACCESS_IN_NODE}
       - N8N_GIT_NODE_DISABLE_BARE_REPOS=${N8N_GIT_NODE_DISABLE_BARE_REPOS}
-      - N8N_BASIC_AUTH_ACTIVE=true
-      - N8N_BASIC_AUTH_USER=${N8N_BASIC_AUTH_USER}
-      - N8N_BASIC_AUTH_PASSWORD=${N8N_BASIC_AUTH_PASSWORD}
+      - NODES_EXCLUDE='["LocalFileTrigger"]'
+    extra_hosts:
+      - "host.docker.internal:host-gateway"      
     volumes:
       - ./n8n-data:/home/node/.n8n
       - ./n8n-files:/files
